@@ -14,22 +14,35 @@ body{
 }
 #content{
     height: 80%;
-    width: 80%;
+    width: 100%;
+    
 
 }
 #menuframeid{
     margin: 0px;
     padding: 0px;
     height: 800px;
+    width: 15%;
+    float: left;
+    border-bottom: none;
 }
 #contentframeid{
     margin: 0px;
     padding: 0px;
-    float: rigth;
+    float: left;
     height: 800px;
     width: 70%;
     background: whitesmoke;
     border: none;
 
 
+}
+#browserframeid{
+    margin: 0px;
+    padding: 0px;
+    height: 200px;
+    width: 14%;
+    float: right ;
+    border: none;
+    position: relative;
 }
