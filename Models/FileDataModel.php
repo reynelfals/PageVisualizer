@@ -22,7 +22,7 @@ class FileDataModel implements IDocDataModel {
 
     public function __construct() {
         $ini_array = parse_ini_file(INI_FILE);
-        $this->dir = $ini_array[FileDataModel::FILE_DIR_KEY];
+        $this->dir = dirname(__DIR__).DIRECTORY_SEPARATOR.$ini_array[FileDataModel::FILE_DIR_KEY];
     }
 
     public function getTitles() {
