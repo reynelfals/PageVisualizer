@@ -1,5 +1,6 @@
 <?php
-require_once dirname(__DIR__).DIRECTORY_SEPARATOR.'Models'.DIRECTORY_SEPARATOR.'AbstractFactoryDAO.php';
+
+require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'Models' . DIRECTORY_SEPARATOR . 'AbstractFactoryDAO.php';
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -12,25 +13,30 @@ require_once dirname(__DIR__).DIRECTORY_SEPARATOR.'Models'.DIRECTORY_SEPARATOR.'
  * @author zayfals2015
  */
 class DocumentManager {
-    private $daokeys=['SQL','File'];
-    private $daoList=array();
+
+    private $daokeys = ['SQL', 'File'];
+    private $daoList = array();
+
     function __construct() {
         foreach ($this->daokeys as $keyvalue) {
-            array_push($this->daoList,AbstractFactoryDAO::getDao($keyvalue));
+            array_push($this->daoList, AbstractFactoryDAO::getDao($keyvalue));
         }
     }
+
     public function getTitles() {
-        $titles=array();
+        $titles = array();
         foreach ($this->daoList as $dao) {
-            $titles=array_merge($titles, $dao->getTitles());
+            $titles = array_merge($titles, $dao->getTitles());
         }
         return $titles;
     }
+
     public function getDocumentByTitle($title) {
-        $docs=array();
+        $docs = array();
         foreach ($this->daoList as $dao) {
-            $docs=array_merge($docs, $dao->getDocByTitle($title));
+            $docs = array_merge($docs, $dao->getDocByTitle($title));
         }
         return $docs;
     }
+
 }

@@ -12,8 +12,10 @@
  * @author zayfals2015
  */
 interface IDocDataModel {
-    public function __construct();
-    public function getTitles();
-    public function getDocByTitle($title);
 
+    public function __construct();
+
+    public function getTitles();
+
+    public function getDocByTitle($title);
 }

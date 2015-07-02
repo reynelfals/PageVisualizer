@@ -1,4 +1,5 @@
 <?php
+
 require_once 'Document.php';
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -12,8 +13,9 @@ require_once 'Document.php';
  * @author zayfals2015
  */
 class DocHTML extends Document {
+
     public function toHTML() {
-       return $this->content; 
+        return $this->content;
     }
 
 //put your code here

@@ -1,8 +1,8 @@
 <?php
 
-
 require_once 'DocHTML.php';
 require_once 'DocText.php';
+
 class DocumentBuilder {
 
     private $mime = NULL;
