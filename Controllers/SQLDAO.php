@@ -1,7 +1,7 @@
 <?php
 
 defined('INI_FILE') or define('INI_FILE', 'dataModel.ini');
-require_once 'iDocDataModel.php';
+require_once 'IDocDAO.php';
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -14,7 +14,7 @@ require_once 'iDocDataModel.php';
  *
  * @author zayfals2015
  */
-class SQLDataModel implements IDocDataModel {
+class SQLDAO implements IDocDAO {
 
     //DB keys
     const DB_DSN_KEY = 'dsn';
@@ -34,7 +34,7 @@ class SQLDataModel implements IDocDataModel {
 
         $this->ini_array = parse_ini_file(INI_FILE);
         try {
-            $this->PDO = new PDO($this->ini_array[SQLDataModel::DB_DSN_KEY], $this->ini_array[SQLDataModel::DB_USER_KEY]);
+            $this->PDO = new PDO($this->ini_array[SQLDAO::DB_DSN_KEY], $this->ini_array[SQLDAO::DB_USER_KEY]);
             $this->PDO->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch (PDOException $e) {
             header('Location: ' . urldecode(IError::URL) . '?' . IError::KEY . '=' . urlencode($e->getMessage()));
@@ -47,10 +47,10 @@ class SQLDataModel implements IDocDataModel {
 
 
         try {
-            $statement = $this->PDO->prepare($this->ini_array[SQLDataModel::DB_STTMNT_TTL_KEY]);
+            $statement = $this->PDO->prepare($this->ini_array[SQLDAO::DB_STTMNT_TTL_KEY]);
 
             if ($statement->execute()) {
-                $statement->bindColumn($this->ini_array[SQLDataModel::DB_INDX_LINK_KEY], $link);
+                $statement->bindColumn($this->ini_array[SQLDAO::DB_INDX_LINK_KEY], $link);
 
 
                 while ($row = $statement->fetch(PDO::FETCH_BOUND)) {
@@ -70,16 +70,16 @@ class SQLDataModel implements IDocDataModel {
     public function getDocByTitle($title) {
         $resultList = array();
         try {
-            $statement = $this->PDO->prepare($this->ini_array[SQLDataModel::DB_STTMNT_DOC_KEY]);
+            $statement = $this->PDO->prepare($this->ini_array[SQLDAO::DB_STTMNT_DOC_KEY]);
             if (!$statement->bindParam(
-                            $this->ini_array[SQLDataModel::DB_INDX_LINK_KEY], $title)) {
+                            $this->ini_array[SQLDAO::DB_INDX_LINK_KEY], $title)) {
                 echo 'error binding title';
             }
             if ($statement->execute()) {
-                $statement->bindColumn($this->ini_array[SQLDataModel::DB_INDX_LINK_KEY], $link);
-                $statement->bindColumn($this->ini_array[SQLDataModel::DB_INDX_TTL_KEY], $title);
-                $statement->bindColumn($this->ini_array[SQLDataModel::DB_INDX_MIME_KEY], $mime);
-                $statement->bindColumn($this->ini_array[SQLDataModel::DB_INDX_TEXT_KEY], $text);
+                $statement->bindColumn($this->ini_array[SQLDAO::DB_INDX_LINK_KEY], $link);
+                $statement->bindColumn($this->ini_array[SQLDAO::DB_INDX_TTL_KEY], $title);
+                $statement->bindColumn($this->ini_array[SQLDAO::DB_INDX_MIME_KEY], $mime);
+                $statement->bindColumn($this->ini_array[SQLDAO::DB_INDX_TEXT_KEY], $text);
                 while ($row = $statement->fetch(PDO::FETCH_BOUND)) {
                     $docBuilder = new DocumentBuilder();
                     $doc = $docBuilder->setMime($mime)

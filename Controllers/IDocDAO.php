@@ -11,7 +11,7 @@
  *
  * @author zayfals2015
  */
-interface IDocDataModel {
+interface IDocDAO {
 
     public function __construct();
 

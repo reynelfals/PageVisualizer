@@ -1,7 +1,7 @@
 <?php
 
-require_once 'SQLDataModel.php';
-require_once 'FileDataModel.php';
+require_once 'SQLDAO.php';
+require_once 'FileDAO.php';
 //require_once 'SQLDataModel.php';
 //require_once 'FileDataModel.php';
 /*
@@ -19,9 +19,9 @@ class AbstractFactoryDAO {
 
     public static function getDao($key) {
         if (strpos($key, 'SQL') === FALSE) {
-            return new FileDataModel();
+            return new FileDAO();
         }
-        return new SQLDataModel();
+        return new SQLDAO();
     }
 
 }

@@ -1,7 +1,7 @@
 <?php
 
 defined('INI_FILE') or define('INI_FILE', 'dataModel.ini');
-require_once 'iDocDataModel.php';
+require_once 'IDocDAO.php';
 require_once 'DocumentBuilder.php';
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -14,7 +14,7 @@ require_once 'DocumentBuilder.php';
  *
  * @author zayfals2015
  */
-class FileDataModel implements IDocDataModel {
+class FileDAO implements IDocDAO {
 
     const FILE_DIR_KEY = 'dir_root';
 
@@ -22,7 +22,7 @@ class FileDataModel implements IDocDataModel {
 
     public function __construct() {
         $ini_array = parse_ini_file(INI_FILE);
-        $this->dir = dirname(__DIR__) . DIRECTORY_SEPARATOR . $ini_array[FileDataModel::FILE_DIR_KEY];
+        $this->dir = dirname(__DIR__) . DIRECTORY_SEPARATOR . $ini_array[FileDAO::FILE_DIR_KEY];
     }
 
     public function getTitles() {
