@@ -12,13 +12,7 @@ and open the template in the editor.
     </head>
     <body>
         <?php
-        require_once 'DocText.php';
-        require_once 'DocHTML.php';
-        require_once 'DocDataModel.php';
-        require_once 'SQLDataModel.php';
-        require_once 'FileDataModel.php';
-        require_once 'Parser.php';
-        require_once 'DocumentManager.php';
+        require_once dirname(__DIR__).DIRECTORY_SEPARATOR.'PageVisualizer'.DIRECTORY_SEPARATOR.'Controllers'.DIRECTORY_SEPARATOR.'DocumentManager.php';
         // put your code here
         $myarr=[1, 1, 3, 5, 6, 8, 10, 11, 10, 9, 8, 9, 10, 11, 7] ;
         function getSeqIndex($arr){
@@ -42,7 +36,7 @@ and open the template in the editor.
         $docMngr= new DocumentManager();
         $titles=$docMngr->getTitles();
         foreach ($titles as $value) {
-            echo '<a href="'.urldecode('HTMLView.php?title='.$value).'">'.$value.'</a><br/>';
+            echo '<a href="'.urldecode('Viewers/HTMLView.php?title='.$value).'">'.$value.'</a><br/>';
         }
         
         ?>

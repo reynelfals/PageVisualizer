@@ -1,5 +1,5 @@
 <?php
-require_once 'DocumentManager.php';
+require_once dirname(__DIR__).DIRECTORY_SEPARATOR.'Controllers'.DIRECTORY_SEPARATOR.'DocumentManager.php';
 /* 
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates

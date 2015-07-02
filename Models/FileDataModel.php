@@ -1,7 +1,7 @@
 <?php
 
 defined('INI_FILE') or define('INI_FILE', 'dataModel.ini');
-require_once 'DocDataModel.php';
+require_once 'iDocDataModel.php';
 require_once 'DocumentBuilder.php';
 /*
  * To change this license header, choose License Headers in Project Properties.

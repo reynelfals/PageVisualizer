@@ -1,6 +1,6 @@
 <?php
 require_once 'Document.php';
-require_once 'Parser.php';
+require_once dirname(__DIR__).DIRECTORY_SEPARATOR.'Controllers'.DIRECTORY_SEPARATOR.'Parser.php';
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
