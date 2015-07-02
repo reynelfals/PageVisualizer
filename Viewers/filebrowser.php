@@ -34,7 +34,7 @@ and open the template in the editor.
                 $urldec = urldecode('Viewers/HTMLView.php?title=' . $title);
                 echo '<script type="text/javascript">',
                 'myfunction("' . $urldec . '");',
-                '</script><br/>';
+                '</script>';
                 echo PHP_EOL . '<a href="' . urldecode('HTMLView.php?title=' . $title) . '" target="contentframe">' . $title . '</a>';
             }
         }
