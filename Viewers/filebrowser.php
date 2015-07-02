@@ -28,13 +28,13 @@ and open the template in the editor.
         </form>
         <?php
         if (isset($_POST["submit"])) {
-            require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'Models' . DIRECTORY_SEPARATOR . 'FilePersist.php';
+            require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'Controllers' . DIRECTORY_SEPARATOR . 'FilePersist.php';
             $title = FilePersist::persist();
             if ($title != NULL) {
                 $urldec = urldecode('Viewers/HTMLView.php?title=' . $title);
                 echo '<script type="text/javascript">',
                 'myfunction("' . $urldec . '");',
-                '</script>';
+                '</script><br/>';
                 echo PHP_EOL . '<a href="' . urldecode('HTMLView.php?title=' . $title) . '" target="contentframe">' . $title . '</a>';
             }
         }
