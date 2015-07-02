@@ -33,8 +33,8 @@ and open the template in the editor.
                 return null;
             }
         }
-?>
-        
+        ?>
+
         <div id="header"></div>
         <div id="content">
             <iframe  src="Viewers/menu.php" name="menuframe" id="menuframeid">
@@ -43,8 +43,11 @@ and open the template in the editor.
             <iframe  src="Viewers/initial.php" name="contentframe" id="contentframeid">
             <p>iframe not supported by the browser.</p>
             </iframe>
+            <iframe  src="Viewers/filebrowser.php" name="browserframe" id="browserframeid">
+            <p>iframe not supported by the browser.</p>
+            </iframe>
         </div>
         <div id="footer"></div>
-        
+
     </body>
 </html>

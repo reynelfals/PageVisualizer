@@ -15,9 +15,9 @@ and open the template in the editor.
         <div id="content">
             <section id="contentsection1">
                 <h2>Here will be visualized</h2>
-            <article id="description">
-                Here will be visualized the web page selected on the lefthand menu.
-            </article>
+                <article id="description">
+                    Here will be visualized the web page selected on the lefthand menu.
+                </article>
             </section>
         </div>
         <div id="footer"></div>

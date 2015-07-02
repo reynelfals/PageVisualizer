@@ -16,15 +16,15 @@ and open the template in the editor.
                 <li>
                     <a href="initial.php" target="contentframe">Instructive page</a><br/>
                 </li>
-        <?php
-         require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'Controllers' . DIRECTORY_SEPARATOR . 'DocumentManager.php';
-        $docMngr = new DocumentManager();
-        $titles = $docMngr->getTitles();
-        foreach ($titles as $value) {
-            echo '<li>'.PHP_EOL.'<a href="' . urldecode('HTMLView.php?title=' . $value) . '" target="contentframe">' . $value . '</a>'.PHP_EOL.'</li>';
-        }
-        ?>
-        </ul>
+                <?php
+                require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'Controllers' . DIRECTORY_SEPARATOR . 'DocumentManager.php';
+                $docMngr = new DocumentManager();
+                $titles = $docMngr->getTitles();
+                foreach ($titles as $value) {
+                    echo '<li>' . PHP_EOL . '<a href="' . urldecode('HTMLView.php?title=' . $value) . '" target="contentframe">' . $value . '</a>' . PHP_EOL . '</li>';
+                }
+                ?>
+            </ul>
         </nav>
     </body>
 </html>
