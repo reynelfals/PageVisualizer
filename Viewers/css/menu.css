@@ -1,0 +1,39 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jul 2, 2015, 1:28:29 AM
+    Author     : zayfals2015
+*/
+body{
+    background: rgba(0,0,0,0.1);
+    font-size: 120%;
+    font-style: normal;
+}
+nav{
+    text-decoration:none;
+    text-align:left;
+}
+ul{
+    list-style-type:none;
+    padding:0px;
+    margin:0px;
+}
+nav ul li {
+float:outside;
+margin:0px;
+padding:4px;
+}
+a{
+    box-shadow: -5px 5px 10px rgba(0,0,0,0.5);
+    color: rgba(0,120,120,0.9);
+    
+    transition: all 0.5s;
+}
+a:hover{
+    background: rgba(0,0,255,0.3);
+    font-size:130%;
+}
+

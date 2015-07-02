@@ -7,7 +7,7 @@
  */
 
 /**
- * Description of DocDataModel
+ * Description of IDocDataModel
  *
  * @author zayfals2015
  */

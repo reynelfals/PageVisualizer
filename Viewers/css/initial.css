@@ -1,0 +1,26 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jul 2, 2015, 2:16:59 AM
+    Author     : zayfals2015
+*/
+body{
+    
+    font-size:200%;
+    background:url(../img/arrow-310621_640.png);
+    background-repeat: no-repeat;
+    font-family: monospace;
+    font-weight: bold;
+    font-style:normal;
+    color: rgba(120,50,0,0.6);
+}
+h2{
+   
+    box-shadow: 0px 15px 25px rgba(0,0,0,0.6);
+}
+#content{
+    text-align: center;
+}

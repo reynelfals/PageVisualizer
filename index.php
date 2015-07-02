@@ -9,6 +9,7 @@ and open the template in the editor.
     <head>
         <meta charset="UTF-8">
         <title></title>
+        <link rel="stylesheet" href="Viewers/css/index.css"></link>
     </head>
     <body>
         <?php
@@ -32,12 +33,18 @@ and open the template in the editor.
                 return null;
             }
         }
-
-        $docMngr = new DocumentManager();
-        $titles = $docMngr->getTitles();
-        foreach ($titles as $value) {
-            echo '<a href="' . urldecode('Viewers/HTMLView.php?title=' . $value) . '">' . $value . '</a><br/>';
-        }
-        ?>
+?>
+        
+        <div id="header"></div>
+        <div id="content">
+            <iframe  src="Viewers/menu.php" name="menuframe" id="menuframeid">
+            <p>iframe not supported by the browser.</p>
+            </iframe>
+            <iframe  src="Viewers/initial.php" name="contentframe" id="contentframeid">
+            <p>iframe not supported by the browser.</p>
+            </iframe>
+        </div>
+        <div id="footer"></div>
+        
     </body>
 </html>
