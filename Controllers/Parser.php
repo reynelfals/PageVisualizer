@@ -25,8 +25,8 @@ class Parser {
     }
 
     private static function formatURL(&$text) {
-
-        $pattern = '#(http|https|ftp|ftps)\:\/\/[-a-zA-Z0-9:%_\+.~\#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~\#?&//=]*)?#si';
+    $pattern = "/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i";
+        //$pattern = '/(http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/';
         $replacement = '<a href="$0">$0</a>';
         $text = preg_replace($pattern, $replacement, $text);
     }
