@@ -33,7 +33,7 @@ class Parser {
 
     private static function formatH1(&$text) {
 
-        $pattern = '/(.*)\n([^\n]+)(={2,}|\-{2,})/';
+        $pattern = '/(.*)\n([^\n]+)(={3,}|\-{3,})/';
         $replacement = '<h1>$1</h1>' . PHP_EOL;
         $text = preg_replace($pattern, $replacement, $text);
     }
